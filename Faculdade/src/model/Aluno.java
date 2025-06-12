@@ -1,14 +1,19 @@
 package model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Aluno {
     // Definindo atributos
     private String matricula;
     private String nome;
+    private Set<Disciplina> disciplina;
 
     // Construtor
     //método usado para criar um objeto.
 
     public Aluno(String matricula, String nome) {
+        this.disciplina = new HashSet<Disciplina>();
         this.matricula = matricula; // This faz referencia do atributo
         this.nome = nome;
     }
@@ -32,4 +37,5 @@ public class Aluno {
         this.nome = nome;
     }
 
-}
+
+    }

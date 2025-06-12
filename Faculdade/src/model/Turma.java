@@ -1,6 +1,8 @@
 package model;
 
 
+import java.util.HashSet;
+import java.util.Set;
 
 public class Turma {
     private String id;
@@ -8,8 +10,11 @@ public class Turma {
     private  String horario;
     private  String sala;
 
+
     private Professor professor;
     private Disciplina disciplina;
+    private Set<Aluno> aluno;
+    private Set<Curso> curso;
 
     public Turma(String id, String diaDaSemana, String horario, String sala, Professor professor, Disciplina disciplina){
         this.id = id;
@@ -18,14 +23,10 @@ public class Turma {
         this.sala = sala;
         this.professor = professor;
         this.disciplina = disciplina;
-    }
+        this.aluno = new HashSet<Aluno>();
+        this.curso = new HashSet<Curso>();
 
-    public Turma (String id, String diaDaSemana, String horario, String sala, Disciplina disciplina){
-        this.id = id;
-        this.diaDaSemana = diaDaSemana;
-        this.horario = horario;
-        this.sala = sala;
-        this.disciplina = disciplina;
+
     }
 
     public String getId(){
@@ -58,8 +59,26 @@ public class Turma {
         return disciplina;
     }
 
+
     public void setDisciplina(Disciplina disciplina){
         this.disciplina = disciplina;
+    }
+
+
+    public void  addAluno(Aluno aluno) {
+        this.aluno.add(aluno);
+    }
+
+    public Set<Aluno> getAluno(){
+        return this.aluno;
+    }
+
+    public void addCurso(Curso curso){
+        this.curso.add(curso);
+    }
+
+    public Set<Curso> getCurso(){
+        return this.curso;
     }
 
     public String getSala(){
@@ -69,5 +88,7 @@ public class Turma {
     public  void  setSala(String sala){
         this.sala = sala;
     }
+
+
 }
 

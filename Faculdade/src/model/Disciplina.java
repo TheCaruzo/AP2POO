@@ -8,8 +8,9 @@ public class Disciplina {
     private int id;
     private String nome;
     private  int cargahora;
-
     private Set<Turma> turma;
+
+
 
     public Disciplina(int id, String nome, int cargahora) {
         this.turma = new HashSet<Turma>();
@@ -60,6 +61,7 @@ public class Disciplina {
     public  void setTurmas(Set<Turma> turma){
         this.turma = turma;
     }
+
 }
 
 
